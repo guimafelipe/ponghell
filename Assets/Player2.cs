@@ -9,6 +9,7 @@ public class Player2 : Player {
 
 	void Start () {
 		shootPoint = getChildGameObject ("ShootPoint");
+		hp = maxHp;
 	}
 	
 	// Update is called once per frame
@@ -28,7 +29,7 @@ public class Player2 : Player {
 		} else if (Input.GetKey ("o")) {
 			rotateRight ();
 		}
-		if (Input.GetKeyDown ("m")) {
+		if (Input.GetKeyDown ("n")) {
 			Shoot (bulletPrefab);
 		}
 	}	

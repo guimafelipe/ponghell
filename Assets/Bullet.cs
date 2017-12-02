@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour {
 
 	public float speed = 20;
 	private Vector3 velocity;
+	public int dmg = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -36,6 +37,11 @@ public class Bullet : MonoBehaviour {
 		}
 		if (other.gameObject.tag == "player1" || other.gameObject.tag == "player2") {
 			//TODO: dar dano: Player = other.gameobject.getComponent<Player>()
+			Player playerbhvr = other.gameObject.GetComponent<Player1>();
+			if (!playerbhvr) {
+				playerbhvr = other.gameObject.GetComponent<Player2>();
+			}
+			playerbhvr.takeDamage (dmg);
 			Destroy(gameObject);
 		}
 	}

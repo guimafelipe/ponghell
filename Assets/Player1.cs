@@ -9,6 +9,7 @@ public class Player1 : Player {
 
 	void Start () {
 		shootPoint = getChildGameObject ("ShootPoint");
+		hp = maxHp;
 	}
 	
 	// Update is called once per frame

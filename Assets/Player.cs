@@ -13,7 +13,6 @@ public abstract class Player : MonoBehaviour {
 	protected GameObject getChildGameObject(string _name){
 		Transform[] ts = this.gameObject.transform.GetComponentsInChildren<Transform> (true);
 		foreach (Transform t in ts) {
-			Debug.Log (t.gameObject.name);
 			if (t.gameObject.name == _name)
 				return t.gameObject;
 		}
@@ -21,8 +20,7 @@ public abstract class Player : MonoBehaviour {
 	}
 
 	void Start(){
-		hp = maxHp;
-
+		
 	}
 
 	void Update(){
@@ -66,6 +64,13 @@ public abstract class Player : MonoBehaviour {
 	#endregion
 	public void takeDamage(int dmg){
 		hp -= dmg;
+		if (hp <= 0) {
+			Die ();
+		}
+	}
+
+	private void Die(){
+		Destroy (this.gameObject);
 	}
 
 	public void Shoot (GameObject _bullet){
