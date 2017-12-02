@@ -464,48 +464,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.23642349, y: 10.837912}
   m_EdgeRadius: 0
---- !u!1001 &1457842325
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4420575832720216, guid: f913a3de1eb152245a232b0c1e7dd49c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 4420575832720216, guid: f913a3de1eb152245a232b0c1e7dd49c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 4420575832720216, guid: f913a3de1eb152245a232b0c1e7dd49c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.03606322
-      objectReference: {fileID: 0}
-    - target: {fileID: 4420575832720216, guid: f913a3de1eb152245a232b0c1e7dd49c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4420575832720216, guid: f913a3de1eb152245a232b0c1e7dd49c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4420575832720216, guid: f913a3de1eb152245a232b0c1e7dd49c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4420575832720216, guid: f913a3de1eb152245a232b0c1e7dd49c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4420575832720216, guid: f913a3de1eb152245a232b0c1e7dd49c, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: f913a3de1eb152245a232b0c1e7dd49c, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1529706643
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d5767b3c8bdfd4a9ab0423c3b4e1aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1550197259539822, guid: de437171f13fcf440959e53d6d0e795f,
+    type: 2}
 --- !u!1 &1591433878
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,48 +670,6 @@ PolygonCollider2D:
       - {x: 0.49701932, y: -0.30807775}
       - {x: 0.6270194, y: -0.13077039}
       - {x: 0.62269276, y: 0.113462955}
---- !u!1001 &1849274643
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4850463331455388, guid: de437171f13fcf440959e53d6d0e795f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.821673
-      objectReference: {fileID: 0}
-    - target: {fileID: 4850463331455388, guid: de437171f13fcf440959e53d6d0e795f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.47595876
-      objectReference: {fileID: 0}
-    - target: {fileID: 4850463331455388, guid: de437171f13fcf440959e53d6d0e795f, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.03606322
-      objectReference: {fileID: 0}
-    - target: {fileID: 4850463331455388, guid: de437171f13fcf440959e53d6d0e795f, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4850463331455388, guid: de437171f13fcf440959e53d6d0e795f, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4850463331455388, guid: de437171f13fcf440959e53d6d0e795f, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4850463331455388, guid: de437171f13fcf440959e53d6d0e795f, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4850463331455388, guid: de437171f13fcf440959e53d6d0e795f, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: de437171f13fcf440959e53d6d0e795f, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1890368887
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fbc55f05fa5924987b7bab54adbc4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1932944328186448, guid: f913a3de1eb152245a232b0c1e7dd49c,
+  bulletPrefab: {fileID: 1870834446284330, guid: f913a3de1eb152245a232b0c1e7dd49c,
     type: 2}
 --- !u!1 &2055311967
 GameObject:
