@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		setInitialDirection (new Vector3 (1f, 1f));
+		//setInitialDirection (new Vector3 (1f, 1f));
 	}
 		
 	// Update is called once per frame
@@ -33,6 +33,10 @@ public class Bullet : MonoBehaviour {
 		}
 		if (other.gameObject.tag == "left" || other.gameObject.tag == "right") {
 			invertVelocityX ();
+		}
+		if (other.gameObject.tag == "player1" || other.gameObject.tag == "player2") {
+			//TODO: dar dano: Player = other.gameobject.getComponent<Player>()
+			Destroy(gameObject);
 		}
 	}
 

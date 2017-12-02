@@ -5,8 +5,10 @@ using UnityEngine;
 public class Player1 : Player {
 
 	// Use this for initialization
+	public GameObject bulletPrefab;
+
 	void Start () {
-		
+		shootPoint = getChildGameObject ("ShootPoint");
 	}
 	
 	// Update is called once per frame
@@ -25,6 +27,9 @@ public class Player1 : Player {
 			rotateLeft ();
 		} else if (Input.GetKey ("e")) {
 			rotateRight ();
+		}
+		if (Input.GetKeyDown ("space")) {
+			Shoot (bulletPrefab);
 		}
 	}
 }

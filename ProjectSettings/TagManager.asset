@@ -8,6 +8,8 @@ TagManager:
   - bottom
   - left
   - right
+  - player1
+  - player2
   layers:
   - Default
   - TransparentFX
