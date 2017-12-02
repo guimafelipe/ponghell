@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Player : MonoBehaviour {
 
 	protected float speed = 3;
-	protected float rotSpeed = 75;
+	protected float rotSpeed = 125;
 
 	public void goUp(){
 		this.transform.position = new Vector3 (this.transform.position.x,
