@@ -298,7 +298,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1247314535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29, y: 0, z: 0}
+  m_LocalPosition: {x: 0.213, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1890368888}
@@ -473,6 +473,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1529706644}
   - component: {fileID: 1529706645}
+  - component: {fileID: 1529706646}
+  - component: {fileID: 1529706647}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -508,6 +510,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1550197259539822, guid: de437171f13fcf440959e53d6d0e795f,
     type: 2}
+--- !u!60 &1529706646
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1529706643}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.19520664, y: 0.24385977}
+      - {x: -0.06720257, y: 0.31617528}
+      - {x: 0.09779787, y: 0.3075214}
+      - {x: 0.70605755, y: 0.000579834}
+      - {x: 0.7065358, y: -0.00081914663}
+      - {x: 0.10212517, y: -0.31184828}
+      - {x: -0.08315611, y: -0.31184828}
+      - {x: -0.19703579, y: -0.22588706}
+      - {x: -0.2953434, y: -0.0851087}
+      - {x: -0.29510403, y: 0.09063211}
+--- !u!50 &1529706647
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1529706643}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1591433878
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +642,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1643243138}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0.29, y: 0, z: 0}
+  m_LocalPosition: {x: 0.213, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1529706644}
@@ -679,6 +735,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1890368888}
   - component: {fileID: 1890368889}
+  - component: {fileID: 1890368891}
+  - component: {fileID: 1890368890}
   m_Layer: 0
   m_Name: Player1
   m_TagString: player1
@@ -714,6 +772,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1870834446284330, guid: f913a3de1eb152245a232b0c1e7dd49c,
     type: 2}
+--- !u!50 &1890368890
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1890368887}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!60 &1890368891
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1890368887}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.06717777, y: 0.3106525}
+      - {x: -0.18373823, y: 0.25058913}
+      - {x: -0.29820728, y: 0.08551481}
+      - {x: -0.2719803, y: -0.13318652}
+      - {x: -0.18517017, y: -0.25324023}
+      - {x: -0.062161922, y: -0.30754107}
+      - {x: 0.10554743, y: -0.31216693}
+      - {x: 0.71797466, y: -0.0055601597}
+      - {x: 0.71792173, y: 0.0060976148}
+      - {x: 0.079073906, y: 0.31848216}
 --- !u!1 &2055311967
 GameObject:
   m_ObjectHideFlags: 0
