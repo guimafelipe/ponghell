@@ -8,6 +8,7 @@ public class Player1 : Player {
 	public GameObject bulletPrefab;
 
 	void Start () {
+		//obsUIs = new IUIzinha[0];
 		shootPoint = getChildGameObject ("ShootPoint");
 		hp = maxHp;
 	}

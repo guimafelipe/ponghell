@@ -10,6 +10,9 @@ public abstract class Player : MonoBehaviour {
 	protected int hp;
 	protected GameObject shootPoint;
 
+	[SerializeField]
+	protected IUIzinha[] obsUIs;
+
 	protected GameObject getChildGameObject(string _name){
 		Transform[] ts = this.gameObject.transform.GetComponentsInChildren<Transform> (true);
 		foreach (Transform t in ts) {
@@ -17,6 +20,22 @@ public abstract class Player : MonoBehaviour {
 				return t.gameObject;
 		}
 		return null;
+	}
+
+	public void seInscrever(IUIzinha uinova){
+		//Debug.Log (obsUIs);
+		if (null == obsUIs) {
+			obsUIs = new IUIzinha[1];
+			obsUIs.SetValue (uinova, 0);
+		} else {
+			obsUIs.SetValue (uinova, obsUIs.Length - 1);
+		}
+	}
+
+	private void atualizarUIs(){
+		foreach (IUIzinha ui in obsUIs) {
+			ui.AtualizarHP (hp);
+		}
 	}
 
 	void Start(){
@@ -64,6 +83,7 @@ public abstract class Player : MonoBehaviour {
 	#endregion
 	public void takeDamage(int dmg){
 		hp -= dmg;
+		atualizarUIs ();  //Observer
 		if (hp <= 0) {
 			Die ();
 		}
