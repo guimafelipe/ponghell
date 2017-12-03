@@ -8,30 +8,32 @@ public class Player1 : Player {
 	public GameObject bulletPrefab;
 
 	void Start () {
+		base.Start ();
 		//obsUIs = new IUIzinha[0];
-		shootPoint = getChildGameObject ("ShootPoint");
-		hp = maxHp;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey ("w")) {
-			goUp ();
-		} else if (Input.GetKey ("s")) {
-			goDown ();
-		}
-		if (Input.GetKey ("a")) {
-			goLeft ();
-		} else if(Input.GetKey("d")){
-			goRight();
-		}
-		if (Input.GetKey ("q")) {
-			rotateLeft ();
-		} else if (Input.GetKey ("e")) {
-			rotateRight ();
-		}
-		if (Input.GetKeyDown ("space")) {
-			Shoot (bulletPrefab);
+		if (canMove) {
+			if (Input.GetKey ("w")) {
+				goUp ();
+			} else if (Input.GetKey ("s")) {
+				goDown ();
+			}
+			if (Input.GetKey ("a")) {
+				goLeft ();
+			} else if (Input.GetKey ("d")) {
+				goRight ();
+			}
+			if (Input.GetKey ("q")) {
+				rotateLeft ();
+			} else if (Input.GetKey ("e")) {
+				rotateRight ();
+			}
+			if (Input.GetKeyDown ("space")) {
+				Shoot (bulletPrefab);
+			}
 		}
 	}
 }

@@ -9,6 +9,7 @@ public abstract class Player : MonoBehaviour {
 	protected int maxHp = 5;
 	protected int hp;
 	protected GameObject shootPoint;
+	public bool canMove;
 
 	[SerializeField]
 	protected IUIzinha[] obsUIs;
@@ -38,8 +39,10 @@ public abstract class Player : MonoBehaviour {
 		}
 	}
 
-	void Start(){
-		
+	public void Start(){
+		canMove = false;
+		shootPoint = getChildGameObject ("ShootPoint");
+		hp = maxHp;
 	}
 
 	void Update(){

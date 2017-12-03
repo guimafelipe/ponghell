@@ -9,6 +9,7 @@ public class HPUI : MonoBehaviour, IUIzinha {
 	public int lifes;
 	public int playerQueOlho;
 
+
 	[SerializeField]
 	Image[] vidas;
 
@@ -55,6 +56,5 @@ public class HPUI : MonoBehaviour, IUIzinha {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 }
