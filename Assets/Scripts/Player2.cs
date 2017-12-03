@@ -9,6 +9,7 @@ public class Player2 : Player {
 
 	void Start () {
 		base.Start ();
+		playertype = 2;
 	}
 	
 	// Update is called once per frame
@@ -34,5 +35,4 @@ public class Player2 : Player {
 			}
 		}
 	}	
-
 }

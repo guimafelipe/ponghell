@@ -9,7 +9,14 @@ public abstract class Player : MonoBehaviour {
 	protected int maxHp = 5;
 	protected int hp;
 	protected GameObject shootPoint;
+
 	public bool canMove;
+	public bool canTakeDamage;
+
+	AudioManager audiomanager;
+	protected GManager gmanager;
+
+	protected int playertype = 0;
 
 	[SerializeField]
 	protected IUIzinha[] obsUIs;
@@ -41,8 +48,11 @@ public abstract class Player : MonoBehaviour {
 
 	public void Start(){
 		canMove = false;
+		canTakeDamage = true;
 		shootPoint = getChildGameObject ("ShootPoint");
 		hp = maxHp;
+		audiomanager = GameObject.Find ("_AudioManager").GetComponent<AudioManager> ();
+		gmanager = GameObject.Find ("_GM").GetComponent<GManager> ();
 	}
 
 	void Update(){
@@ -85,6 +95,9 @@ public abstract class Player : MonoBehaviour {
 	}
 	#endregion
 	public void takeDamage(int dmg){
+		if (!canTakeDamage) {
+			return;
+		}
 		hp -= dmg;
 		atualizarUIs ();  //Observer
 		if (hp <= 0) {
@@ -92,8 +105,15 @@ public abstract class Player : MonoBehaviour {
 		}
 	}
 
-	private void Die(){
+	protected virtual void Die(){
+		audiomanager.PlaySound ("Morte");
+		// TODO: Instanciar animação de morte aqui
 		Destroy (this.gameObject);
+		if (playertype == 1) {
+			gmanager.Player1Morreu ();
+		} else if (playertype == 2) {
+			gmanager.Player2Morreu ();
+		}
 	}
 
 	public void Shoot (GameObject _bullet){
@@ -107,6 +127,7 @@ public abstract class Player : MonoBehaviour {
 			direction = bullet.transform.position - this.transform.position;
 			Debug.Log (direction);
 			bulletbhvr.setInitialDirection (direction);
+			audiomanager.PlaySound ("Shoot");
 		} else {
 			DestroyImmediate (bullet);
 		}

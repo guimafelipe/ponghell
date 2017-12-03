@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-	public float speed = 20;
+	public float speed = 5;
 	private Vector3 velocity;
 	public int dmg = 1;
+	AudioManager audiomanager;
 
 	// Use this for initialization
 	void Start () {
-		//setInitialDirection (new Vector3 (1f, 1f));
+		audiomanager = GameObject.Find ("_AudioManager").GetComponent<AudioManager> ();
 	}
 		
 	// Update is called once per frame
 	void Update () {
-		this.transform.position = new Vector3 (this.transform.position.x + velocity.x * Time.deltaTime,
-			this.transform.position.y + velocity.y * Time.deltaTime,
+		this.transform.position = new Vector3 (this.transform.position.x + velocity.x * Time.deltaTime * speed,
+			this.transform.position.y + velocity.y * Time.deltaTime * speed,
 			this.transform.position.z);
 	}
 
@@ -24,16 +25,18 @@ public class Bullet : MonoBehaviour {
 	public void setInitialDirection(Vector3 direction){
 		velocity = direction;
 		velocity = velocity.normalized;
-		velocity = new Vector3 (velocity.x * speed, velocity.y * speed, velocity.z);
+		//velocity = new Vector3 (velocity.x * speed, velocity.y * speed, velocity.z);
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
 		// TODO: Tentar fazer detectando o ponto de colisao e matemática vetorial
 		if (other.gameObject.tag == "top" || other.gameObject.tag == "bottom") {
 			invertVelocityY ();
+			audiomanager.PlaySound ("Bounce");
 		}
 		if (other.gameObject.tag == "left" || other.gameObject.tag == "right") {
 			invertVelocityX ();
+			audiomanager.PlaySound ("Bounce");
 		}
 		if (other.gameObject.tag == "player1" || other.gameObject.tag == "player2") {
 			//TODO: dar dano: Player = other.gameobject.getComponent<Player>()
@@ -42,6 +45,7 @@ public class Bullet : MonoBehaviour {
 				playerbhvr = other.gameObject.GetComponent<Player2>();
 			}
 			playerbhvr.takeDamage (dmg);
+			audiomanager.PlaySound ("Damage2");
 			Destroy(gameObject);
 		}
 	}

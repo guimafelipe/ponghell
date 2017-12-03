@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1296433653117690}
+  m_IsPrefabParent: 1
+--- !u!1 &1296433653117690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4766107118802458}
+  - component: {fileID: 114608978586170878}
+  m_Layer: 0
+  m_Name: _AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4766107118802458
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1296433653117690}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.6886194, y: -0.4666835, z: 2.1906226}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114608978586170878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1296433653117690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b4b45590e87f440bd3c2c468837614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: 1
+    clip: {fileID: 8300000, guid: 1fe0ed527e74f724bb6b46ad19e77011, type: 3}
+    volume: 1
+    pitch: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    loop: 0
+  - name: 2
+    clip: {fileID: 8300000, guid: a79bcd5fa232ca24cb36bf02f632b445, type: 3}
+    volume: 1
+    pitch: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    loop: 0
+  - name: 3
+    clip: {fileID: 8300000, guid: 39495fb75ce9692439f6f6acb1c8df2f, type: 3}
+    volume: 1
+    pitch: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    loop: 0
+  - name: LetsRock
+    clip: {fileID: 8300000, guid: dcb136b0e1d17a740a600976c7d356eb, type: 3}
+    volume: 1
+    pitch: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    loop: 0
+  - name: Bounce
+    clip: {fileID: 8300000, guid: 79226775f1fe70346802ef06e8e68978, type: 3}
+    volume: 0.4
+    pitch: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    loop: 0
+  - name: Damage2
+    clip: {fileID: 8300000, guid: a4edfa2214dd582449bcd26d2a9503ec, type: 3}
+    volume: 0.3
+    pitch: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    loop: 0
+  - name: Damage3
+    clip: {fileID: 8300000, guid: 3db043595d684ff418af379b0546a804, type: 3}
+    volume: 0.3
+    pitch: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    loop: 0
+  - name: Morte
+    clip: {fileID: 8300000, guid: 134f7812ec3308140a48e4fd8e65b6d0, type: 3}
+    volume: 0.823
+    pitch: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    loop: 0
+  - name: P1win
+    clip: {fileID: 8300000, guid: 65a102cc75b9ce94397fb66d547b74b3, type: 3}
+    volume: 1
+    pitch: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    loop: 0
+  - name: P2win
+    clip: {fileID: 8300000, guid: 212b1deee96fd3646925f9ab6b1b5599, type: 3}
+    volume: 1
+    pitch: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    loop: 0
+  - name: Shoot
+    clip: {fileID: 8300000, guid: 046be555c681e7f41b9c78093aae92ed, type: 3}
+    volume: 0.15
+    pitch: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    loop: 0
+  - name: BackgroundMusic
+    clip: {fileID: 8300000, guid: 8e9743558a1b2be45829ad739b9add5e, type: 3}
+    volume: 0.1
+    pitch: 1
+    volumeVariance: 0
+    pitchVariance: 0
+    loop: 1

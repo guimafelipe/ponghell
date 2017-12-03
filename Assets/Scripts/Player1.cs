@@ -9,6 +9,7 @@ public class Player1 : Player {
 
 	void Start () {
 		base.Start ();
+		playertype = 1;
 		//obsUIs = new IUIzinha[0];
 
 	}
