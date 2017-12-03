@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GManager : MonoBehaviour {
 
@@ -59,7 +60,7 @@ public class GManager : MonoBehaviour {
 		}
 		if (state == (int)stateOfGame.endGame) {
 			if (Input.GetKeyDown (KeyCode.Space)) {
-				//load menu scene
+				SceneManager.LoadScene(0);
 			}
 		}
 	}
