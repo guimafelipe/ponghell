@@ -6,7 +6,7 @@ public abstract class Player : MonoBehaviour {
 
 	protected float speed = 3;
 	protected float rotSpeed = 125;
-	protected int maxHp = 5;
+	protected int maxHp = 7;
 	protected int hp;
 	protected GameObject shootPoint;
 
@@ -55,6 +55,12 @@ public abstract class Player : MonoBehaviour {
 		audiomanager = GameObject.Find ("_AudioManager").GetComponent<AudioManager> ();
 		gmanager = GameObject.Find ("_GM").GetComponent<GManager> ();
 		inputmanager = GameObject.Find ("_InputManager").GetComponent<InputManager> ();
+		StartCoroutine (primeiraAttUIs ());
+	}
+
+	IEnumerator primeiraAttUIs(){
+		yield return new WaitForEndOfFrame ();
+		atualizarUIs ();
 	}
 
 	void Update(){

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HPUI : MonoBehaviour, IUIzinha {
 
-	public int maxLifes = 5;
+	public int maxLifes = 7;
 	public int lifes;
 	public int playerQueOlho;
 
@@ -17,6 +17,9 @@ public class HPUI : MonoBehaviour, IUIzinha {
 	void Start () {
 		lifes = maxLifes;
 		vidas = GetComponentsInChildren<Image> ();
+		for (int i = 0; i < vidas.Length; i++) {
+			vidas [i].GetComponent<Image>().enabled = false;
+		}
 		StartCoroutine (LateStart ());
 	}
 		
@@ -45,11 +48,11 @@ public class HPUI : MonoBehaviour, IUIzinha {
 		Debug.Log (hpNovo);
 		int i;
 		for (i = 0; i < hpNovo; i++) {
-			vidas [i].enabled = true;
+			vidas [i].GetComponent<Image>().enabled = true;
 		}
 		Debug.Log (i);
 		for (int j = i; j < vidas.Length; j++) {
-			vidas [j].enabled = false;
+			vidas [j].GetComponent<Image>().enabled = false;
 		}
 	}
 
