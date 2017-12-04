@@ -76,4 +76,8 @@ public class InputManager : MonoBehaviour {
 		}
 		return buttonKeys [buttonName].ToString ();
 	}
+
+	public void SetButtonForKey(string buttonName, KeyCode keycode){
+		buttonKeys [buttonName] = keycode;
+	}
 }

@@ -5,10 +5,10 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-public class P1KeyBind : KeyBindController {
+public class P2KeyBind : KeyBindController {
 
 	void Start(){
-		playerquesou = '1';
+		playerquesou = '2';
 		base.Start ();
 	}
 
