@@ -17,22 +17,22 @@ public class Player1 : Player {
 	// Update is called once per frame
 	void Update () {
 		if (canMove) {
-			if (Input.GetKey ("w")) {
+			if (inputmanager.GetButton ("P1Up")) {
 				goUp ();
-			} else if (Input.GetKey ("s")) {
+			} else if (inputmanager.GetButton ("P1Down")) {
 				goDown ();
 			}
-			if (Input.GetKey ("a")) {
+			if (inputmanager.GetButton ("P1Left")) {
 				goLeft ();
-			} else if (Input.GetKey ("d")) {
+			} else if (inputmanager.GetButton ("P1Right")) {
 				goRight ();
 			}
-			if (Input.GetKey ("q")) {
+			if (inputmanager.GetButton ("P1RotateLeft")) {
 				rotateLeft ();
-			} else if (Input.GetKey ("e")) {
+			} else if (inputmanager.GetButton ("P1RotateRight")) {
 				rotateRight ();
 			}
-			if (Input.GetKeyDown ("space")) {
+			if (inputmanager.GetButtonDown ("P1Shoot")) {
 				Shoot (bulletPrefab);
 			}
 		}

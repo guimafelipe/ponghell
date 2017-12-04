@@ -14,6 +14,7 @@ public abstract class Player : MonoBehaviour {
 	public bool canTakeDamage;
 
 	AudioManager audiomanager;
+	protected InputManager inputmanager;
 	protected GManager gmanager;
 
 	protected int playertype = 0;
@@ -53,6 +54,7 @@ public abstract class Player : MonoBehaviour {
 		hp = maxHp;
 		audiomanager = GameObject.Find ("_AudioManager").GetComponent<AudioManager> ();
 		gmanager = GameObject.Find ("_GM").GetComponent<GManager> ();
+		inputmanager = GameObject.Find ("_InputManager").GetComponent<InputManager> ();
 	}
 
 	void Update(){
