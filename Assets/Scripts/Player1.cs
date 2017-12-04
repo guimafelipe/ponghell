@@ -27,9 +27,9 @@ public class Player1 : Player {
 			} else if (inputmanager.GetButton ("P1Right")) {
 				goRight ();
 			}
-			if (inputmanager.GetButton ("P1RotateLeft")) {
+			if (inputmanager.GetButton ("P1Rotate Left")) {
 				rotateLeft ();
-			} else if (inputmanager.GetButton ("P1RotateRight")) {
+			} else if (inputmanager.GetButton ("P1Rotate Right")) {
 				rotateRight ();
 			}
 			if (inputmanager.GetButtonDown ("P1Shoot")) {
