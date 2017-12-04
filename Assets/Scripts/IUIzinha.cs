@@ -3,5 +3,5 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public interface IUIzinha {
-	void AtualizarHP(int hpnovo);
+	void Atualizar(string action, int value);
 }

@@ -36,5 +36,6 @@ public class Player1 : Player {
 				Shoot (bulletPrefab);
 			}
 		}
+		base.Update ();
 	}
 }

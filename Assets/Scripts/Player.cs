@@ -8,6 +8,11 @@ public abstract class Player : MonoBehaviour {
 	protected float rotSpeed = 125;
 	protected int maxHp = 7;
 	protected int hp;
+	protected int maxBullets = 7;
+	protected int bullets;
+	public float maxReloadTime = 3f;
+	protected float reloadTime;
+
 	protected GameObject shootPoint;
 
 	public bool canMove;
@@ -34,16 +39,16 @@ public abstract class Player : MonoBehaviour {
 	public void seInscrever(IUIzinha uinova){
 		//Debug.Log (obsUIs);
 		if (null == obsUIs) {
-			obsUIs = new IUIzinha[1];
+			obsUIs = new IUIzinha[2];
 			obsUIs.SetValue (uinova, 0);
 		} else {
 			obsUIs.SetValue (uinova, obsUIs.Length - 1);
 		}
 	}
 
-	private void atualizarUIs(){
+	private void atualizarUIs(string action, int value){
 		foreach (IUIzinha ui in obsUIs) {
-			ui.AtualizarHP (hp);
+			ui.Atualizar (action, value);
 		}
 	}
 
@@ -52,6 +57,8 @@ public abstract class Player : MonoBehaviour {
 		canTakeDamage = true;
 		shootPoint = getChildGameObject ("ShootPoint");
 		hp = maxHp;
+		reloadTime = maxReloadTime;
+		bullets = maxBullets;
 		audiomanager = GameObject.Find ("_AudioManager").GetComponent<AudioManager> ();
 		gmanager = GameObject.Find ("_GM").GetComponent<GManager> ();
 		inputmanager = GameObject.Find ("_InputManager").GetComponent<InputManager> ();
@@ -60,11 +67,17 @@ public abstract class Player : MonoBehaviour {
 
 	IEnumerator primeiraAttUIs(){
 		yield return new WaitForEndOfFrame ();
-		atualizarUIs ();
+		atualizarUIs ("hp", hp);
+		atualizarUIs ("bullets", bullets);
 	}
 
-	void Update(){
-
+	protected void Update(){
+		if (canMove) {
+			reloadTime -= Time.deltaTime;
+		}
+		if (reloadTime <= 0) {
+			Reload ();
+		}
 	}
 
 	#region movMethods
@@ -107,7 +120,7 @@ public abstract class Player : MonoBehaviour {
 			return;
 		}
 		hp -= dmg;
-		atualizarUIs ();  //Observer
+		atualizarUIs ("hp", hp);  //Observer
 		if (hp <= 0) {
 			Die ();
 		}
@@ -124,7 +137,25 @@ public abstract class Player : MonoBehaviour {
 		}
 	}
 
+	public void Reload(){
+		if (!canMove) {
+			return;
+		}
+		if (bullets < maxBullets) {
+			bullets++;
+		}
+		atualizarUIs ("bullets", bullets);
+		reloadTime = maxReloadTime;
+	}
+
 	public void Shoot (GameObject _bullet){
+		if (bullets <= 0) {
+			return;
+		}
+		if (bullets > 0) {
+			bullets--;
+		}
+		atualizarUIs ("bullets", bullets);
 		GameObject bullet;
 		bullet = Instantiate (_bullet.gameObject) as GameObject;
 		bullet.transform.position = shootPoint.transform.position;

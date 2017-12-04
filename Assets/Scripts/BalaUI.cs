@@ -3,26 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HPUI : MonoBehaviour, IUIzinha {
+public class BalaUI : MonoBehaviour, IUIzinha {
 
-	public int maxLifes = 7;
-	public int lifes;
+
+	public int maxBullets = 10;
+	public int bullets;
 	public int playerQueOlho;
 
 
 	[SerializeField]
-	Image[] vidas;
+	Image[] balas;
 
 	// Use this for initialization
 	void Start () {
-		lifes = maxLifes;
-		vidas = GetComponentsInChildren<Image> ();
-		for (int i = 0; i < vidas.Length; i++) {
-			vidas [i].GetComponent<Image>().enabled = false;
+		bullets = maxBullets;
+		balas = GetComponentsInChildren<Image> ();
+		for (int i = 0; i < balas.Length; i++) {
+			balas [i].GetComponent<Image>().enabled = false;
 		}
 		StartCoroutine (LateStart ());
 	}
-		
+
 	IEnumerator LateStart(){
 		yield return new WaitForEndOfFrame();
 		seInscreverNoPlayer ();
@@ -39,25 +40,26 @@ public class HPUI : MonoBehaviour, IUIzinha {
 		}
 
 		if (playerbhvr != null) {
-			playerbhvr.seInscrever (this.gameObject.GetComponent<HPUI>());
+			playerbhvr.seInscrever (this.gameObject.GetComponent<BalaUI>());
 		}
 	}
 
-	public void Atualizar(string action, int hpNovo){
-		if (action != "hp") {
+	public void Atualizar(string action, int balasNovo){
+		if (action != "bullets") {
 			return;
 		}
+		Debug.Log ("atualizou bullets " + balasNovo);
 		int i;
-		for (i = 0; i < hpNovo; i++) {
-			vidas [i].GetComponent<Image>().enabled = true;
+		for (i = 0; i < balasNovo; i++) {
+			balas [i].GetComponent<Image>().enabled = true;
 		}
 		Debug.Log (i);
-		for (int j = i; j < vidas.Length; j++) {
-			vidas [j].GetComponent<Image>().enabled = false;
+		for (int j = i; j < balas.Length; j++) {
+			balas [j].GetComponent<Image>().enabled = false;
 		}
 	}
 
-	
+
 	// Update is called once per frame
 	void Update () {
 	}
